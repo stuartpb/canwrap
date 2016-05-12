@@ -1,10 +1,11 @@
-function CanwrapCtor(ctx) {
+function Canwrap(ctx) {
+  if (!this instanceof Canwrap) return new Canwrap(ctx);
   this.ctx = ctx;
 }
 
 var LineBreaker = require('linebreak');
 
-CanwrapCtor.prototype.splitLines =
+Canwrap.prototype.splitLines =
 function splitLines(text, wrapWidth) {
   var ctx = this.ctx;
   var lineStart = 0;
@@ -50,7 +51,7 @@ function splitLines(text, wrapWidth) {
   return lines;
 };
 
-CanwrapCtor.prototype.fillWrappedText =
+Canwrap.prototype.fillWrappedText =
 function fillWrappedText(text, x, y, wrapWidth, lineHeight) {
   var ctx = this.ctx;
   var lines = this.splitLines(text, wrapWidth);
@@ -59,7 +60,7 @@ function fillWrappedText(text, x, y, wrapWidth, lineHeight) {
   }
 };
 
-CanwrapCtor.prototype.fillWrappedText =
+Canwrap.prototype.fillWrappedText =
 function strokeWrappedText(text, x, y, wrapWidth, lineHeight) {
   var ctx = this.ctx;
   var lines = this.splitLines(text, wrapWidth);
@@ -68,4 +69,4 @@ function strokeWrappedText(text, x, y, wrapWidth, lineHeight) {
   }
 };
 
-module.exports = CanwrapCtor;
+module.exports = Canwrap;
