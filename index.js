@@ -60,7 +60,7 @@ function fillWrappedText(text, x, y, wrapWidth, lineHeight) {
   }
 };
 
-Canwrap.prototype.fillWrappedText =
+Canwrap.prototype.strokeWrappedText =
 function strokeWrappedText(text, x, y, wrapWidth, lineHeight) {
   var ctx = this.ctx;
   var lines = this.splitLines(text, wrapWidth);
