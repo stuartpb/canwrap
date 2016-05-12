@@ -1,6 +1,12 @@
+function CanwrapCtor(ctx) {
+  this.ctx = ctx;
+}
+
 var LineBreaker = require('linebreak');
 
-function splitLines(text, ctx, wrapWidth) {
+CanwrapCtor.prototype.splitLines =
+function splitLines(text, wrapWidth) {
+  var ctx = this.ctx;
   var lineStart = 0;
   var lastOption = 0;
   var breaker = new LineBreaker(text);
@@ -42,22 +48,24 @@ function splitLines(text, ctx, wrapWidth) {
   lines[lines.length] = text.slice(lineStart);
 
   return lines;
-}
+};
 
-function fillWrappedText(ctx, text, x, y, wrapWidth, lineHeight) {
-  var lines = splitLines(text, ctx, wrapWidth);
+CanwrapCtor.prototype.fillWrappedText =
+function fillWrappedText(text, x, y, wrapWidth, lineHeight) {
+  var ctx = this.ctx;
+  var lines = this.splitLines(text, wrapWidth);
   for (var i = 0; i < lines.length; i++) {
     ctx.fillText(lines[i], x, y + lineHeight * i);
   }
-}
+};
 
-function strokeWrappedText(ctx, text, x, y, wrapWidth, lineHeight) {
-  var lines = splitLines(text, ctx, wrapWidth);
+CanwrapCtor.prototype.fillWrappedText =
+function strokeWrappedText(text, x, y, wrapWidth, lineHeight) {
+  var ctx = this.ctx;
+  var lines = this.splitLines(text, wrapWidth);
   for (var i = 0; i < lines.length; i++) {
     ctx.strokeText(lines[i], x, y + lineHeight * i);
   }
-}
+};
 
-module.exports.splitLines = splitLines;
-module.exports.fillWrappedText = fillWrappedText;
-module.exports.strokeWrappedText = strokeWrappedText;
+module.exports = CanwrapCtor;
