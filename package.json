@@ -1,6 +1,6 @@
 {
   "name": "canwrap",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A library for wrapping strings to lines in a 2D canvas rendering context.",
   "main": "index.js",
   "scripts": {
