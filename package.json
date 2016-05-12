@@ -1,0 +1,30 @@
+{
+  "name": "canwrap",
+  "version": "0.0.0",
+  "description": "A library for wrapping strings to lines in a 2D canvas rendering context.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stuartpb/canwrap.git"
+  },
+  "keywords": [
+    "canvas",
+    "text",
+    "wrap"
+  ],
+  "author": "Stuart P. Bentley <stuart@testtrack4.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stuartpb/canwrap/issues"
+  },
+  "homepage": "https://github.com/stuartpb/canwrap#readme",
+  "dependencies": {
+    "linebreak": "^0.3.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.1"
+  }
+}
