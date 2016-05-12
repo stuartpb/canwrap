@@ -24,10 +24,7 @@ function splitLines(text, wrapWidth) {
 
     // if this line would overshoot the wrap width
     } else if (ctx.measureText(
-        // Don't count space characters at the end of the string
-        // TODO: Check if this is sound logic
-        text.slice(lineStart, bk.position)
-      ).width > wrapWidth) {
+      text.slice(lineStart, bk.position)).width > wrapWidth) {
 
         // if our last possible line break was forced
         if (lineStart == lastOption) {
